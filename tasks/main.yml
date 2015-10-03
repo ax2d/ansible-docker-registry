@@ -2,9 +2,7 @@
 # tasks file for docker-registry
 
 - name: Install Packages
-  yum: pkg={{ item }} state=installed
-  with_items:
-    - docker-registry
+  yum: pkg=docker-registry state=present
 
 - name: Verify docker_registry_storage_path exists
   file: >
